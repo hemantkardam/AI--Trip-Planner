@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL + "/places";
+const BASE_URL = window.location.origin + "/api/places";
 
 export const GetPlaceDetails = (data) => axios.post(BASE_URL, data);
 export const PHOTO_REF_URL =

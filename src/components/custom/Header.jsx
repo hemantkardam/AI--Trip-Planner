@@ -17,12 +17,11 @@ import {
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { IconContext } from "react-icons";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const user = JSON.parse(localStorage.getItem("user"));
-  useEffect(() => {
-    // console.log(user);
-  }, []);
+  const navigate = useNavigate();
   const GetUserProfile = (tokenInfo) => {
     axios
       .get(
@@ -45,7 +44,11 @@ function Header() {
   });
   return (
     <div className="p-3 shadow-smc bg-slate-200 flex justify-between items-center px-5">
-      <img src="/logo.svg" />
+      <img
+        src="/logo.svg"
+        className="cursor-pointer"
+        onClick={() => navigate("/")}
+      />
       <div>
         {user ? (
           <div className="flex items-center gap-5">
