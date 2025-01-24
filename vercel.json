@@ -13,15 +13,9 @@
         }
       }
     ],
-    "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "Server/index.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/build/index.html"
-    }
-  ]
+    "routes": [
+      { "src": "/api/(.*)", "dest": "Server/index.js" },
+      { "src": "/[.]+", "dest": "/build/index.html", "status": 200 }
+    ]
 
   }
