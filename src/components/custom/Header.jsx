@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "../ui/button";
 import { FcGoogle } from "react-icons/fc";
 import {
@@ -19,7 +19,6 @@ import axios from "axios";
 import { IconContext } from "react-icons";
 
 function Header() {
-  const [openDialog, setOpenDialog] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
     // console.log(user);
@@ -36,9 +35,7 @@ function Header() {
         }
       )
       .then((resp) => {
-        // console.log(resp);
         localStorage.setItem("user", JSON.stringify(resp.data));
-        setOpenDialog(false);
         window.location.reload();
       });
   };
@@ -86,10 +83,8 @@ function Header() {
           </div>
         ) : (
           <Dialog>
-            <DialogTrigger>
-              <Button>Sign IN</Button>
-            </DialogTrigger>
-            <DialogContent>
+            <DialogTrigger className="text-white">Sign IN</DialogTrigger>
+            <DialogContent className="[&>button]:text-white">
               <DialogTitle>
                 <img src="/logo.svg" />
               </DialogTitle>
