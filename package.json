@@ -4,11 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "start": "node Server/index.js",
-    "vite-build": "vite build",
-    "build": "npm install && npm run install-deps",
-    "install-deps": "concurrently \"npm run build\" \"cd Server && npm install\"",
+    "start": "vite",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
