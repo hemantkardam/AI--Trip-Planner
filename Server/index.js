@@ -3,9 +3,16 @@ const axios = require("axios");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
+require("dotenv").config();
 app.use(bodyParser.json());
 app.use(cors());
-require("dotenv").config();
+
+app.use(express.static(path.join(__dirname, "../build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
 
 app.post("/api/places", async (req, res) => {
   try {
@@ -30,7 +37,7 @@ app.post("/api/places", async (req, res) => {
     res.status(500).send(error);
   }
 });
-app.get("/", (req, res) => {
+app.get("/api/status", (req, res) => {
   res.send("Server is running");
 });
 const port = process.env.PORT;
