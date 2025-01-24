@@ -20,7 +20,7 @@ import { FcGoogle } from "react-icons/fc";
 
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { toast } from "sonner";
-import { chatSession } from "../Service/AiModal";
+import { chatSession } from "../Service/AIModal";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
