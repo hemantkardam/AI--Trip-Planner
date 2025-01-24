@@ -10,7 +10,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 // import { IconContext } from "react-icons";
 import Viewtrip from "./view-trip/[tripId]/index2.jsx";
 import Footer from "./view-trip/Components/Footer.jsx";
-import MyTrips from "./my-trip/index.jsx";
+import MyTrips from "./my-trip/Index.jsx";
 
 const router = createBrowserRouter([
   {

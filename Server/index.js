@@ -15,7 +15,7 @@ app.post("/api/places", async (req, res) => {
       {
         headers: {
           "Content-Type": "application/json",
-          "X-Goog-Api-Key": process.env.GOOGLE_PLACE_API_KEY,
+          "X-Goog-Api-Key": process.env.VITE_GOOGLE_PLACE_API_KEY,
           "X-Goog-FieldMask": [
             "places.photos",
             "places.displayName",
